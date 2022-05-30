@@ -165,7 +165,7 @@ const contractAddress = "0xbB3541984c9dD6B38204C82CeE40Ce2185942977";
  }
 
  return (
-   <div className="mainContainer">
+   <div className="container">
 
      <div className="dataContainer">
        <div className="header">
@@ -178,18 +178,17 @@ const contractAddress = "0xbB3541984c9dD6B38204C82CeE40Ce2185942977";
          
          Eu ja recebi {xau}
        </div>
-<label>
-          Escreva sua Mensagem:
-          <input type="text" id="msg" onChange={setMsg} />        </label>
+          
+          <textarea className="textArea" placeholder="O que você está pensando" type="text" id="msg" rows={4} onChange={setMsg} />        
        
-       <button className="waveButton" onClick={wave}>
+       <button className="send" onClick={wave}>
          Enviar SmartMessage 🧠
        </button>
        {/*
        * Se não existir currentAccount, apresente este botão
        */}
        {!currentAccount && (
-         <button className="waveButton" onClick={connectWallet}>
+         <button className="send" onClick={connectWallet}>
            Conectar carteira
          </button>
        )}
